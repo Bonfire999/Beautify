@@ -112,3 +112,7 @@ git cherry-pick commitA commitB commitC不连续多个提交
 git rebase main(feature的c2作为main的第一个)
 ![rebase1](image-4.png)
 ![rebase2](image-5.png)
+
+
+ERQI2026招新
+https://github.com/Bonfire999/ERQI2026-.git
