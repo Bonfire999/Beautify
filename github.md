@@ -28,6 +28,8 @@ git push -u origin main
 git add .
 git commit -m "描述这次改了啥"
 git push
+### 建立关联
+git push --set-upstream origin main
 
 ### 强制回退：git reset --hard a1b2c3d（每次提交的哈希值）
 也可以右键选择checkout（detached）分离头指针或create branch
