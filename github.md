@@ -28,6 +28,7 @@ git push -u origin main
 git add .
 git commit -m "描述这次改了啥"
 git push
+最好直接在vscode上进行操作
 ### 建立关联
 git push --set-upstream origin main
 
