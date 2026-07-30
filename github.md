@@ -115,4 +115,4 @@ git rebase main(feature的c2作为main的第一个)
 
 
 ERQI2026招新
-https://github.com/Bonfire999/ERQI2026-.git
+https://github.com/Bonfire999/ERQI2026-recruit.git
