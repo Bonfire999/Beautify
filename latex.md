@@ -231,3 +231,82 @@ setlength{\fboxsep}{5pt}边框与字的距离
 \includegraphics[width=10em 或 width=这里可以加倍数\linewidth 或 scale=0.4,angle=45]{图片路径，斜杠要写成/}
 
 #### 浮动体与图片排版
+有点像紧密环绕
+h:here  原文字位置
+t:top  页面顶部
+b:bottom 页面底部
+!可以忽略一些限制
+p:page 放在下一页
+htbp!:让系统自己决定
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics [width=\linewidth]
+    {img/test_img_1.jpg}
+    \caption{标题}
+    \label{fig:enter-label}
+\end{figure}
+
+两栏的话，figure*可以跨栏排版，只不过只有tb两种可选
+
+三张图片共用一个标题排版：
+\begin{figure}
+    \centering
+    \includegraphics [width=0.4\linewidth]
+    {img/test_img_2.jpg} **\hfill**
+    \includegraphics [width=0.4\linewidth]
+    {img/test_img_3.jpg} \\
+    **\vspace{lem}**
+    \includegraphics [width=\linewidth]
+    {img/test_img_1.jpg}
+    \caption{caption}
+    \label{fig:enter-label}
+\end{figure}
+
+两张图片排版：借助minipage盒子
+\begin{figure}
+    \centering
+    \begin{minipage}{0.4\linewidth}
+        \includegraphics[width=\linewidth]
+        {img/test_img_2.jpg}
+        \caption{并排标题1}
+    \end{minipage}
+    \hfi11
+    \begin{minipage}{0.4\linewidth}
+        \includegraphics[width=\linewidth]
+        {img/test_img_3.jpg}
+        \caption{并排标题2}
+    \end{minipage}
+\end{figure}
+
+三张图片三个分开的标题：
+调用宏包:\usepackage{subcaption}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\linewidth]
+        {img/test_img_2.jpg}
+        \caption{子标题1}
+    \end{subfigure} \hspace{2em}
+    \begin{subfigure}{0.4\linewidth}
+        \includegraphics[width=\linewidth]
+        {img/test_img_3.jpg}
+        \caption{子标题2}
+    \end{subfigure} \\ \vspace{lem}
+    \begin{subfigure}{\linewidth}
+        \includegraphics[width=\linewidth]
+        {img/test_img_1.jpg}
+        \caption{子标题3}
+    \end{subfigure}\caption{大标题}
+    \label{fig:fig4}保证每一个label都是唯一的如同身份证
+\end{figure}
+
+以后就可以使用：根据图\ref{fig:fig4}可以得到
+\pageref{fig:fig4}可以获取图片所在页数
+                        
+                     去框
+引入宏包：\usepackage[hidelinks]{hyperref}后
+重命名，把figure换成图片：\renewcommand{\figureautorefname}{图}
+可以使用\autoref{fig:fig4}
+
+#### 有序列表和无序列表
